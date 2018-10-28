@@ -38,7 +38,8 @@ public class Chunk : MonoBehaviour {
         if (sprite != null && sprite != temp)
         {
             sprite = temp;
-            Debug.Assert(sprite != null, "Error: Sprite in " + this + " is null!");
+            if(sprite == null)
+                Debug.LogError("Sprite in " + this + " is null!");
             if (ChunkSize == null)
             {
                 ChunkSize = sprite.bounds;
